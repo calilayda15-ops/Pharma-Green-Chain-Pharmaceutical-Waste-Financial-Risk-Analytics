@@ -12,6 +12,8 @@ pharma-green-chain/
 ├── pharma_green_data.xlsx      # Raw dataset generated via Python
 ├── pharma_green_chain.ipynb    # End-to-end data generation, SQL queries, and visualization scripts
 └── README.md                   # Project documentation
+
+
 Analytics & SQL Queries
 Using an in-memory SQLite database (:memory:), the project implements the following business analytics workflows:
 Packaging Separation Waste Analysis: Compares packaging weights with net drug weights to calculate potential waste reduction volumes by category if packaging separation is implemented.
