@@ -1,0 +1,14 @@
+import sqlite3
+
+# 1. Bilgisayarın hafızasında geçici bir SQL veri tabanı oluşturuyoruz
+conn = sqlite3.connect(':memory:')
+
+# 2. DataFrame verilerinizi "pharma_green_chain" adıyla SQL tablosuna yüklüyoruz
+df.to_sql('pharma_green_chain', conn, index=False, if_exists='replace')
+
+# 3. Örnek bir SQL sorgusu çalıştırıp test ediyoruz
+query = "SELECT * FROM pharma_green_chain LIMIT 5;"
+sql_sonuc = pd.read_sql_query(query, conn)
+
+# 4. SQL çıktısını ekranda görüyoruz
+print(sql_sonuc)
