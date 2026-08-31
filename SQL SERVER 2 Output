@@ -1,0 +1,13 @@
+         Category  Total_Waste_Tons  Net_Drug_Waste_Tons  \
+0      Analgesics        135.600343            34.936163   
+1     Antibiotics        143.821630            36.468444   
+2  Cardiovascular        143.738456            36.885107   
+3        Diabetes        142.668032            36.125450   
+4        Oncology        148.977726            37.403631   
+
+   Saved_Packaging_Waste_Tons  
+0                  100.664180  
+1                  107.353186  
+2                  106.853349  
+3                  106.542582  
+4                  111.574095  
