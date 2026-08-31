@@ -6,6 +6,8 @@ Tech Stack
 Data Generation & Processing: Python, Pandas, NumPy
 Database Management & Querying: SQLite, SQL
 Data Visualization: Matplotlib, Seaborn, Plotly Express
+
+
 Project Structure
 pharma-green-chain/
 │
