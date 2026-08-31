@@ -1,0 +1,12 @@
+query_finance = """
+SELECT
+    Disposal_Method,
+        COUNT(*) as Total_Items,
+            SUM(Stock_Quantity) as Total_Stock,
+                ROUND(SUM(Stock_Quantity * Unit_Cost_USD), 2) as Total_Risk_Value_USD
+                FROM pharma_green_chain
+                GROUP BY Disposal_Method
+                ORDER BY Total_Risk_Value_USD DESC;
+                """
+df_finance = pd.read_sql_query(query_finance, conn)
+print(df_finance)
