@@ -1,0 +1,11 @@
+query_waste = """
+SELECT
+    Category,
+        SUM(Stock_Quantity * Total_Weight_Gram) / 1000000.0 AS Total_Waste_Tons,
+            SUM(Stock_Quantity * Net_Drug_Weight_Gram) / 1000000.0 AS Net_Drug_Waste_Tons,
+                (SUM(Stock_Quantity * Total_Weight_Gram) - SUM(Stock_Quantity * Net_Drug_Weight_Gram)) / 1000000.0 AS Saved_Packaging_Waste_Tons
+                FROM pharma_green_chain
+                GROUP BY Category;
+                """
+df_waste = pd.read_sql_query(query_waste, conn)
+print(df_waste)
