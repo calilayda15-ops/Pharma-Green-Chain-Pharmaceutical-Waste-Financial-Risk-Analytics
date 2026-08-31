@@ -1,0 +1,20 @@
+      Drug_ID     Drug_Name        Category Warehouse_Name  Stock_Quantity  \
+0  PHAR-00001       Insulin  Cardiovascular    Marmara Log            1371   
+1  PHAR-00002  Methotrexate        Diabetes   Istanbul Hub            1033   
+2  PHAR-00003   Paracetamol        Oncology   Istanbul Hub             907   
+3  PHAR-00004  Methotrexate        Diabetes   Istanbul Hub             893   
+4  PHAR-00005  Methotrexate        Diabetes    Aegean Dist             787   
+
+   Unit_Cost_USD  Total_Weight_Gram  Net_Drug_Weight_Gram Manufacturing_Date  \
+0          68.29                142                    17         2024-11-20   
+1          32.31                125                    33         2024-05-10   
+2          34.93                118                    22         2025-03-15   
+3          14.06                146                    28         2024-11-20   
+4          57.97                 62                    18         2024-05-10   
+
+  Expiry_Date    Disposal_Method  
+0  2026-11-20  Dilution & Sewage  
+1  2027-03-15       Incineration  
+2  2026-05-10           Landfill  
+3  2027-03-15           Landfill  
+4  2027-03-15  Dilution & Sewage  
