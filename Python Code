@@ -1,0 +1,31 @@
+import pandas as pd
+import numpy as np
+
+total_rows = 10000
+
+drugs = ['Amoxicillin', 'Metoprolol', 'Paracetamol', 'Insulin', 'Methotrexate']
+categories = ['Antibiotics', 'Cardiovascular', 'Analgesics', 'Diabetes', 'Oncology']
+warehouses = ['Istanbul Hub', 'Marmara Log', 'Aegean Dist', 'Anatolia Depot', 'Med Log']
+methods = ['Incineration', 'Dilution & Sewage', 'Landfill']
+
+np.random.seed(42)
+
+data = {
+    'Drug_ID': [f'PHAR-{i:05d}' for i in range(1, total_rows + 1)],
+    'Drug_Name': np.random.choice(drugs, total_rows),
+    'Category': np.random.choice(categories, total_rows),
+    'Warehouse_Name': np.random.choice(warehouses, total_rows),
+    'Stock_Quantity': np.random.randint(10, 1500, total_rows),
+    'Unit_Cost_USD': np.round(np.random.uniform(1.0, 100.0, total_rows), 2),
+    'Total_Weight_Gram': np.random.randint(40, 150, total_rows),
+    'Net_Drug_Weight_Gram': np.random.randint(10, 39, total_rows),
+    'Manufacturing_Date': np.random.choice(['2024-05-10', '2024-11-20', '2025-03-15'], total_rows),
+    'Expiry_Date': np.random.choice(['2026-05-10', '2026-11-20', '2027-03-15'], total_rows),
+    'Disposal_Method': np.random.choice(methods, total_rows)
+}
+
+df = pd.DataFrame(data)
+
+print(df.head())
+
+df.to_excel('pharma_green_data.xlsx', index=False)
