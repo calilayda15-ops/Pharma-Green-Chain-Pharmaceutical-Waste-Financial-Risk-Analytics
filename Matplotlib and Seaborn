@@ -1,0 +1,36 @@
+import matplotlib.pyplot as plt
+import seaborn as sns
+import plotly.express as px
+
+df_waste['Saved_Packaging_Waste_Tons'] = df_waste['Total_Waste_Tons'] - df_waste['Net_Drug_Waste_Tons']
+
+plt.figure(figsize=(10, 6))
+sns.set_theme(style="whitegrid")
+
+df_melted = pd.melt(df_waste, id_vars=['Category'], value_vars=['Total_Waste_Tons', 'Net_Drug_Waste_Tons'], var_name='Waste_Type', value_name='Tons')
+
+df_melted['Waste_Type'] = df_melted['Waste_Type'].map({
+    'Total_Waste_Tons': 'Total Waste (With Packaging)',
+    'Net_Drug_Waste_Tons': 'Net Chemical Waste (Optimized)'
+})
+
+ax = sns.barplot(x='Category', y='Tons', hue='Waste_Type', data=df_melted, palette='Dark2')
+
+plt.title('Waste Reduction Potential via Packaging Separation', fontsize=14, fontweight='bold', pad=15)
+plt.xlabel('Drug Category', fontsize=12)
+plt.ylabel('Total Waste (Tons)', fontsize=12)
+plt.xticks(rotation=15)
+plt.legend(title='Waste Management State')
+plt.tight_layout()
+plt.show()
+
+fig = px.pie(df_finance,
+             values='Total_Risk_Value_USD',
+             names='Disposal_Method',
+             title='<b>Financial Risk Value under Disposal Methods (USD)</b>',
+             color_discrete_sequence=px.colors.sequential.RdBu,
+             hole=0.4)
+
+fig.update_traces(textposition='inside', textinfo='percent+label')
+fig.update_layout(title_x=0.5, font=dict(size=14))
+fig.show()
